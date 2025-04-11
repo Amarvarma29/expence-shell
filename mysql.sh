@@ -43,8 +43,7 @@ VALIDATE $? "start the service"
 mysql_secure_installation --set-root-pass ExpenseApp@1
 VALIDATE $? "set root password"
 
-mysql -h mysql.amarvarma81s.online -u root -pExpenseApp@1
-VALIDATE $? "connecting the mysql database"
+
 
 
 
