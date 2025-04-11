@@ -13,7 +13,7 @@
 
 echo "script started executing : $(date)"
 
-USERID:$( id -u )
+USERID=$( id -u )
 if [ USERID -ne 0 ]
 then 
      echo "please run the script with r0ot previliges"
@@ -28,6 +28,7 @@ VALIDATE(){
         exit 1
     else
         echo "command $2 is sucess"
+    fi    
 }
 
 dnf install mysql-server -y
