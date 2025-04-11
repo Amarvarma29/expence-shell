@@ -1,19 +1,19 @@
 #!/bin/bash
 
-LOGS_FOLDER="/var/log/shell_script"
-script_NAME=$( echo $0 | cut -d "." -f1)
-TIME_STAMP=$(date +%y-%m-%d-%H-%M-%S)
-LOGS_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log"
+# LOGS_FOLDER="/var/log/shell_script"
+# script_NAME=$( echo $0 | cut -d "." -f1)
+# TIME_STAMP=$(date +%y-%m-%d-%H-%M-%S)
+# LOGS_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log"
 
-mkdir -p $LOGS_FOLDER
+# mkdir -p $LOGS_FOLDER
 
-R="\e[31m"
-G="\e[32m"
-Y="\e[0m"
+# R="\e[31m"
+# G="\e[32m"
+# Y="\e[0m"
 
 echo "script started executing : $(date)"
 
-USERID=$( id -u)
+USERID:$( id -u )
 if [ USERID -ne 0 ]
 then 
      echo "please run the script with r0ot previliges"
