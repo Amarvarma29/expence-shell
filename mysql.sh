@@ -40,8 +40,17 @@ VALIDATE $? "enable mysqld"
 systemctl start mysqld
 VALIDATE $? "start the service"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1
-VALIDATE $? "set root password"
+mysql -h mysql.amarvarma81s.online -u root -pExpenceApp@1 -e "show databases"
+if [ $? -ne 0 ]
+then
+     echo" passwd not set plese set up"
+     mysql_secure_installation --set-root-pass ExpenseApp@1
+     VALIDATE $? "set root password"
+else 
+     echo " passwd is alredy set up"
+fi
+
+
 
 
 
